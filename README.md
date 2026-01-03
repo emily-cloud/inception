@@ -20,6 +20,19 @@ Create `srcs/.env` with the required variables (see `srcs/.env.example` if provi
 
 `DATA_DIR` controls where bind volumes live. Default is `$HOME/data`. Override via environment variable: `DATA_DIR=/custom/path make up`.
 
+## Quick Start
+
+```bash
+git clone https://github.com/emily-cloud/inception.git
+cd inception
+cp srcs/.env.example srcs/.env
+make up
+```
+
+Then visit:
+https://hai.42.fr
+
+
 ## Usage
 ```bash
 make up      # build and start stack
@@ -105,6 +118,29 @@ ls ~/data/web
 ls ~/data/database
 ```
 
+## Demo preview
+
+This is a simple wordpress homepage
+
+<p align="center">
+   <img src="https://github.com/emily-cloud/inception/blob/main/web_screenshots/Screenshot%202026-01-03%20at%2018.19.51.png?raw=1" alt="WordPress home page" style="width:75%; max-width:900px;">
+</p>
+<p align="center"><em>WordPress landing page served through nginx.</em></p>
+
+
+This is wordpress admin page
+<p align="center">
+   <img src="https://github.com/emily-cloud/inception/blob/main/web_screenshots/Screenshot%202026-01-03%20at%2018.21.22.png?raw=1" alt="WordPress admin login" style="width:75%; max-width:900px;">
+</p>
+<p align="center"><em>Accessing https://hai.42.fr/wp-admin with the admin credentials from srcs/.env.</em></p>
+
+This screenshot shows how to check mariadb
+
+<p align="center">
+   <img src="https://github.com/emily-cloud/inception/blob/main/web_screenshots/Screenshot%202026-01-03%20at%2018.36.30.png?raw=1" alt="MariaDB inspection" style="width:75%; max-width:900px;">
+</p>
+<p align="center"><em>Inspecting the MariaDB volume with docker volume inspect and mysql CLI.</em></p>
+
 ## Troubleshooting
 - **`mkdir: /home/... Operation not supported`**: ensure `DATA_DIR` points to a path you control (defaults to `$HOME/data`).
 - **Cannot reach domain**: verify `/etc/hosts` entry, flush DNS, and confirm `docker compose ps` shows all services `Up`.
@@ -154,4 +190,4 @@ Developed for 42 Berlin by:
 - **Huayun Ai** 
 
 ## License
-This project is part of the 42 curriculum. Check school policy before reusing elsewhere.
+This project was developed as part of the 42 curriculum and is intended for educational use.
