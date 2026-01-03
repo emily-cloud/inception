@@ -63,13 +63,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/hai/data/database
+      device: ${DATA_DIR}/database
 
   web:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/hai/data/web
+      device: ${DATA_DIR}/web
 
  

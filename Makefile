@@ -1,6 +1,7 @@
 
-COMPOSE_FILE = srcs/docker-compose.yml
-DATA_DIR = /home/hai/data
+COMPOSE_FILE := srcs/docker-compose.yml
+DATA_DIR ?= $(HOME)/data
+export DATA_DIR
 
 
 up:
